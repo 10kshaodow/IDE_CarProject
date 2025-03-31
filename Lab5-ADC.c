@@ -12,7 +12,7 @@
 
 #include "msp.h"
 #include "uart.h"
-#include "led.h"
+#include "Leds.h"
 #include "switches.h"
 #include "Timer32.h"
 #include "CortexM.h"
@@ -41,7 +41,7 @@ double voltage, temperature_C, temperature_F;
 
 
 // Interrupt Service Routine for Timer32-1
-void Timer32_1_ISR(void)
+void Timer32_1_ISR_ADC(void)
 {
     adc_photocell = ADC_In(); // Read ADC value from channel A6 (P4.7)
 		adc_temp = ADC_In();
@@ -58,7 +58,7 @@ void Timer32_1_ISR(void)
 //}
 
 
-void PORT1_IRQHandler(void) // main purpose is to see where the interrupt came from and we can handle it respective values. 
+void PORT1_IRQHandler_ADC(void) // main purpose is to see where the interrupt came from and we can handle it respective values. 
 {
 	if(P1->IFG & BIT1)
 	{
@@ -75,43 +75,43 @@ void PORT1_IRQHandler(void) // main purpose is to see where the interrupt came f
 
 
 // main
-int main(void)
-{
-	char temp[64];
-	unsigned int analogIn = 0;
-	//initializations
-	uart0_init();
-	uart0_put("\r\nLab5 ADC demo\r\n");
+//int main(void)
+//{
+//	char temp[64];
+//	unsigned int analogIn = 0;
+//	//initializations
+//	uart0_init();
+//	uart0_put("\r\nLab5 ADC demo\r\n");
 
-	LED1_Init();
-	LED2_Init();
-	Switch2_Init();
-	ADC0_InitSWTriggerCh6();
+//	LED1_Init();
+//	LED2_Init();
+//	Switch2_Init();
+//	ADC0_InitSWTriggerCh6();
 
-	Timer32_1_Init(&Timer32_1_ISR, SystemCoreClock/2, T32DIV1); // initialize Timer A32-1;
-	//Timer32_2_Init(&Timer32_2_ISR, SystemCoreClock/2, T32DIV1); // initialize Timer A32-2;
+//	Timer32_1_Init(&Timer32_1_ISR, SystemCoreClock/2, T32DIV1); // initialize Timer A32-1;
+//	//Timer32_2_Init(&Timer32_2_ISR, SystemCoreClock/2, T32DIV1); // initialize Timer A32-2;
 
-	EnableInterrupts();
-  	while(1)
-	{
-		for (;;) {
-			if (new_photocell_data) {
-				new_photocell_data = FALSE;
-				sprintf(temp, "\r\nPhotocell -> Hex: %X | Dec: %u", adc_photocell, adc_photocell);
-				uart0_put(temp);
-			}
-	
-			if (new_temp_data) {
-				new_temp_data = FALSE;
-				// Convert ADC value to temperature
-				voltage = (adc_temp / ADC_MAX) * VREF;
-				temperature_C = (voltage * 100.0 - 50.0) / 1.8;
-				temperature_F = (temperature_C * (9.0 / 5.0)) + 32.0;
-	
-				sprintf(temp, "\r\nTMP36 -> Hex: %X | Dec: %u | Temp: %.2f C | %.2f F", adc_temp, adc_temp, temperature_C, temperature_F);
-				uart0_put(temp);
-			}
-		}
-  	}
-}
+//	EnableInterrupts();
+//  	while(1)
+//	{
+//		for (;;) {
+//			if (new_photocell_data) {
+//				new_photocell_data = FALSE;
+//				sprintf(temp, "\r\nPhotocell -> Hex: %X | Dec: %u", adc_photocell, adc_photocell);
+//				uart0_put(temp);
+//			}
+//	
+//			if (new_temp_data) {
+//				new_temp_data = FALSE;
+//				// Convert ADC value to temperature
+//				voltage = (adc_temp / ADC_MAX) * VREF;
+//				temperature_C = (voltage * 100.0 - 50.0) / 1.8;
+//				temperature_F = (temperature_C * (9.0 / 5.0)) + 32.0;
+//	
+//				sprintf(temp, "\r\nTMP36 -> Hex: %X | Dec: %u | Temp: %.2f C | %.2f F", adc_temp, adc_temp, temperature_C, temperature_F);
+//				uart0_put(temp);
+//			}
+//		}
+//  	}
+//}
 

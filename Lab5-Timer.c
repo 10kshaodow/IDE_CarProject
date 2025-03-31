@@ -13,7 +13,7 @@
 #include "msp.h"
 #include "uart.h"
 #include "switches.h"
-#include "led.h"
+#include "Leds.h"
 #include "Timer32.h"
 #include "CortexM.h"
 #include "Common.h"
@@ -40,10 +40,10 @@ BYTE currentcolor;
 float numSeconds = 0.0;
 
 
-BOOLEAN Timer1RunningFlag = FALSE;
-BOOLEAN Timer2RunningFlag = FALSE;
+BOOLEAN Timer1RunningFlag_T = FALSE;
+BOOLEAN Timer2RunningFlag_T = FALSE;
 
-unsigned long MillisecondCounter = 0;
+unsigned long Milli_sec_Counter = 0;
 //
 
 //  I/O interrupt pin setup
@@ -179,13 +179,13 @@ void PORT1_IRQHandler(void) // main purpose is to see where the interrupt came f
 	if(P1->IFG & BIT1)
 	{
         P1->IFG &= ~BIT1;
-        Timer1RunningFlag = !Timer1RunningFlag;
+        Timer1RunningFlag_T = !Timer1RunningFlag_T;
     }
 	
 	if(P1->IFG & BIT4)
 	{
         P1->IFG &= ~BIT4;
-        Timer2RunningFlag = !Timer2RunningFlag;
+        Timer2RunningFlag_T = !Timer2RunningFlag_T;
     }
 }		
 
@@ -197,7 +197,7 @@ void PORT1_IRQHandler(void) // main purpose is to see where the interrupt came f
 //
 void Timer32_1_ISR(void)
 {
-	if( Timer1RunningFlag ){
+	if( Timer1RunningFlag_T ){
 		if (LED1_State() ) // toggle 
 		{
 			LED1_On();
@@ -213,8 +213,8 @@ void Timer32_1_ISR(void)
 //
 void Timer32_2_ISR(void)
 {
-if( Timer2RunningFlag ){
-		MillisecondCounter++;
+if( Timer2RunningFlag_T ){
+		Milli_sec_Counter++;
 }
 	
 }
@@ -225,37 +225,37 @@ if( Timer2RunningFlag ){
 //
 //
 //
-int main(void){
-	//initializations
-	uart0_init();
-	uart0_put("\r\nLab5 Timer demo\r\n");
-	// Set the Timer32-2 to 2Hz (0.5 sec between interrupts)
-	Timer32_1_Init(&Timer32_1_ISR, SystemCoreClock/2, T32DIV1); // initialize Timer A32-1;
-        ;
-        
-	// Setup Timer32-2 with a .001 second timeout.
-	// So use DEFAULT_CLOCK_SPEED/(1/0.001) = SystemCoreClock/1000
-	Timer32_2_Init(&Timer32_2_ISR, SystemCoreClock/1000, T32DIV1); // initialize Timer A32-1;
-    
-	Switch1_Interrupt_Init();
-	Switch2_Interrupt_Init();
-	LED1_Init();
-	LED2_Init();
-	EnableInterrupts();
-	
+//int main(void){
+//	//initializations
+//	uart0_init();
+//	uart0_put("\r\nLab5 Timer demo\r\n");
+//	// Set the Timer32-2 to 2Hz (0.5 sec between interrupts)
+//	Timer32_1_Init(&Timer32_1_ISR, SystemCoreClock/2, T32DIV1); // initialize Timer A32-1;
+//        ;
+//        
+//	// Setup Timer32-2 with a .001 second timeout.
+//	// So use DEFAULT_CLOCK_SPEED/(1/0.001) = SystemCoreClock/1000
+//	Timer32_2_Init(&Timer32_2_ISR, SystemCoreClock/1000, T32DIV1); // initialize Timer A32-1;
+//    
+//	Switch1_Interrupt_Init();
+//	Switch2_Interrupt_Init();
+//	LED1_Init();
+//	LED2_Init();
+//	EnableInterrupts();
+//	
 
-	
-  	while(1)
-	{
-    WaitForInterrupt();
-				if(Timer2RunningFlag == TRUE){
-			LED2_Off(currentcolor);
-		currentcolor = colors[colorIndex];
-		LED2_On(currentcolor);
-		while (MillisecondCounter % 500 != 0);
-		colorIndex = (colorIndex + 1) % length;
-		}
-	
-  }
-  	
-}
+//	
+//  	while(1)
+//	{
+//    WaitForInterrupt();
+//				if(Timer2RunningFlag_T == TRUE){
+//			LED2_Off(currentcolor);
+//		currentcolor = colors[colorIndex];
+//		LED2_On(currentcolor);
+//		while (Milli_sec_Counter % 500 != 0);
+//		colorIndex = (colorIndex + 1) % length;
+//		}
+//	
+//  }
+//  	
+//}
