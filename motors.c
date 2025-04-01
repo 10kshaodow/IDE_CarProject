@@ -22,16 +22,7 @@ void init_motors(void){
     TIMER_A0_PWM_Init(SystemCoreClock/period, 0.0, 3);
     TIMER_A0_PWM_Init(SystemCoreClock/period, 0.0, 4);
 
-	// Init Motor Enable
-	P3->SEL0 &= ~BIT6;
-	P3->SEL1 &= ~BIT6;
-    P3->DIR |= BIT6;
-	P3->OUT &= ~BIT6;
-	
-	P3->SEL0 &= ~BIT7;
-	P3->SEL1 &= ~BIT7;
-    P3->DIR |= BIT7;
-	P3->OUT &= ~BIT7;
+    TIMER_A2_PWM_Init(50, (1-0.075), 1); // 50Hz frequency, 7.5% duty cycle (1.5ms pulse width)
 }
 
 void move_forward(double speed){
@@ -56,4 +47,16 @@ void stop_motors(void){
 	//Disable Motor
 	P3->OUT &= ~BIT6;
 	P3->OUT &= ~BIT7;
+}
+
+void servo_left(void){
+    TIMER_A2_PWM_DutyCycle(1-0.05, 1);
+}
+
+void servo_right(void){
+    TIMER_A2_PWM_DutyCycle(1-0.1, 1);
+}
+
+void servo_center(void){
+    TIMER_A2_PWM_DutyCycle(1-0.075, 1);
 }
