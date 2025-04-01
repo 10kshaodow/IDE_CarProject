@@ -493,6 +493,21 @@
               <FileType>5</FileType>
               <FilePath>.\CortexM.h</FilePath>
             </File>
+            <File>
+              <FileName>motors.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\motors.c</FilePath>
+            </File>
+            <File>
+              <FileName>Demo1_Main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Demo1_Main.c</FilePath>
+            </File>
+            <File>
+              <FileName>motors.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\motors.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -540,5 +555,20 @@
       </file>
     </files>
   </RTE>
+
+  <LayerInfo>
+    <Layers>
+      <Layer>
+        <LayName>&lt;Project Info&gt;</LayName>
+        <LayDesc></LayDesc>
+        <LayUrl></LayUrl>
+        <LayKeys></LayKeys>
+        <LayCat></LayCat>
+        <LayLic></LayLic>
+        <LayTarg>0</LayTarg>
+        <LayPrjMark>1</LayPrjMark>
+      </Layer>
+    </Layers>
+  </LayerInfo>
 
 </Project>

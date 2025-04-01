@@ -13,7 +13,4 @@ void LED2_On(BYTE x);
 void LED2_Off(BYTE x); 
 BOOLEAN LED1_State(void);
 BOOLEAN LED2_State(void);
-
-
-
 #endif /* LED_H */
