@@ -24,22 +24,28 @@ void init_motors(void){
 		
 		P3 -> DIR |= BIT6;
 		P3 -> DIR |= BIT7;
+	
+	  P3 -> OUT |= BIT6;
+		P3 -> OUT |= BIT7;
+	
+		P2 -> OUT |= BIT4;
+		P2 -> OUT |= BIT5;
+		P2 -> OUT |= BIT6;
+		P2 -> OUT |= BIT7;
+		
+	
   
     TIMER_A0_PWM_Init(SystemCoreClock/period, 0.0, 1);
     TIMER_A0_PWM_Init(SystemCoreClock/period, 0.0, 2);
     TIMER_A0_PWM_Init(SystemCoreClock/period, 0.0, 3);
     TIMER_A0_PWM_Init(SystemCoreClock/period, 0.0, 4);
 
-    TIMER_A2_PWM_Init(50, (1-0.075), 1); // 50Hz frequency, 7.5% duty cycle (1.5ms pulse width)
+    TIMER_A2_PWM_Init(50, (1-0.075), 1); // 50Hz frequency, 7.5% duty cycle (1.5ms pulse width) Servos
 }
 
 void move_forward(double speed){
-//	TIMER_A0_PWM_DutyCycle(0.0, 1);	// Left wheel forwards
-//	TIMER_A0_PWM_DutyCycle(speed, 2);
-//	TIMER_A0_PWM_DutyCycle(0.0, 3);// Right wheel forwards
-//	TIMER_A0_PWM_DutyCycle(speed, 4);
-//	
-	TIMER_A0_PWM_DutyCycle(speed, 1);  
+//left wheel
+TIMER_A0_PWM_DutyCycle(speed, 1);  
 TIMER_A0_PWM_DutyCycle(0.0, 2);    
 
 // Right wheel
@@ -64,11 +70,11 @@ void stop_motors(void){
 	P3->OUT &= ~BIT7;
 }
 
-void servo_left(void){
+void servo_right(void){
     TIMER_A2_PWM_DutyCycle(1-0.05, 1);
 }
 
-void servo_right(void){
+void servo_left(void){
     TIMER_A2_PWM_DutyCycle(1-0.1, 1);
 }
 

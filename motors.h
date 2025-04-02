@@ -13,4 +13,10 @@ void move_backward(void);
 
 void stop_motors(void);
 
+void servo_left(void);
+
+void servo_right(void);
+
+void servo_center(void);
+
 #endif /* MOTORS_H */
