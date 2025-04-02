@@ -21,11 +21,16 @@ int main(){
 	servo_right();
 	myDelay1();
 	servo_center();
+	myDelay1();
+
 	
 
 while(1){	
 if(Switch1_Pressed()){
 	move_forward(0.1);
+	myDelay1();
+	move_backward(0.1);
+	myDelay1();
 	
 }else if(Switch2_Pressed()){
 	stop_motors();
