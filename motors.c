@@ -15,8 +15,16 @@
 
 void init_motors(void){
 	// Init timers for DC motors
-    uint16_t freq = 10000; // Frequency = 10 kHz 
+	  uint16_t freq = 10000; // Frequency = 10 kHz 
     uint16_t period = SystemCoreClock / freq;
+		P2 -> DIR |= BIT4;
+		P2 -> DIR |= BIT5;
+		P2 -> DIR |= BIT6;
+		P2 -> DIR |= BIT7;
+		
+		P3 -> DIR |= BIT6;
+		P3 -> DIR |= BIT7;
+  
     TIMER_A0_PWM_Init(SystemCoreClock/period, 0.0, 1);
     TIMER_A0_PWM_Init(SystemCoreClock/period, 0.0, 2);
     TIMER_A0_PWM_Init(SystemCoreClock/period, 0.0, 3);
@@ -26,10 +34,17 @@ void init_motors(void){
 }
 
 void move_forward(double speed){
-	TIMER_A0_PWM_DutyCycle(0.0, 1);	// Left wheel forwards
-	TIMER_A0_PWM_DutyCycle(speed, 2);
-	TIMER_A0_PWM_DutyCycle(0.0, 3);// Right wheel forwards
-	TIMER_A0_PWM_DutyCycle(speed, 4);
+//	TIMER_A0_PWM_DutyCycle(0.0, 1);	// Left wheel forwards
+//	TIMER_A0_PWM_DutyCycle(speed, 2);
+//	TIMER_A0_PWM_DutyCycle(0.0, 3);// Right wheel forwards
+//	TIMER_A0_PWM_DutyCycle(speed, 4);
+//	
+	TIMER_A0_PWM_DutyCycle(speed, 1);  
+TIMER_A0_PWM_DutyCycle(0.0, 2);    
+
+// Right wheel
+TIMER_A0_PWM_DutyCycle(speed, 3);  
+TIMER_A0_PWM_DutyCycle(0.0, 4); 
 }
 
 void move_backward(void){

@@ -6,9 +6,10 @@
 
 int main(){
  init_motors();
-while(1){
- move_forward(0.01);
 	
+	
+while(1){
+move_forward(0.1);
 }
 
 return 0;
