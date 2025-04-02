@@ -62,12 +62,12 @@ void move_backward(double speed){
 	P3 -> OUT |= BIT7;
 
 	// Left wheel
-	TIMER_A0_PWM_DutyCycle(-speed, 1);
-	TIMER_A0_PWM_DutyCycle(0.0, 2);
+	TIMER_A0_PWM_DutyCycle(0.0, 1);
+	TIMER_A0_PWM_DutyCycle(speed, 2);
 
 	// Right wheel
-	TIMER_A0_PWM_DutyCycle(-speed, 3);
-	TIMER_A0_PWM_DutyCycle(0.0, 4);
+	TIMER_A0_PWM_DutyCycle(0.0, 3);
+	TIMER_A0_PWM_DutyCycle(speed, 4);
 }
 
 void stop_motors(void){
