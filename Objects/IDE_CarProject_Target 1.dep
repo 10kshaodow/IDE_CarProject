@@ -1,0 +1,256 @@
+Dependencies for Project 'IDE_CarProject', Target 'Target 1': (DO NOT MODIFY !)
+CompilerVersion: 5060750::V5.06 update 6 (build 750)::.\ARMCC
+F (.\ADC14.c)(0x67EAEFE6)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -D_RTE_ -D__MSP432P401R__-o .\objects\adc14.o --omf_browse .\objects\adc14.crf --depend .\objects\adc14.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5EC82CCC)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp432p401r.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp_compatibility.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp432p401r_classic.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83BD92)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\system_msp432p401r.h)(0x5B69F946)
+I (Common.h)(0x67EB51C8)
+I (CortexM.h)(0x67EAEFE6)
+I (ADC14.h)(0x67EB51E2)
+F (.\ADC14.h)(0x67EB51E2)()
+F (.\Common.h)(0x67EB51C8)()
+F (.\ControlPins.c)(0x67F2E2B1)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -D_RTE_ -D__MSP432P401R__-o .\objects\controlpins.o --omf_browse .\objects\controlpins.crf --depend .\objects\controlpins.d)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp432p401r.h)(0x5B69F944)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5EC82CCC)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp_compatibility.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp432p401r_classic.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83BD92)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\system_msp432p401r.h)(0x5B69F946)
+I (Timer32.h)(0x67EAEFE6)
+I (Common.h)(0x67EB51C8)
+I (CortexM.h)(0x67EAEFE6)
+I (SysTickTimer.h)(0x67EAEFE6)
+I (ControlPins.h)(0x67EB51DA)
+I (ADC14.h)(0x67EB51E2)
+I (Leds.h)(0x67EB51BB)
+F (.\ControlPins.h)(0x67EB51DA)()
+F (.\Lab5-ADC.c)(0x67EAFCF6)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -D_RTE_ -D__MSP432P401R__-o .\objects\lab5-adc.o --omf_browse .\objects\lab5-adc.crf --depend .\objects\lab5-adc.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5EC82CCC)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5EC82CCC)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp432p401r.h)(0x5B69F944)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5EC82CCC)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp_compatibility.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp432p401r_classic.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83BD92)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\system_msp432p401r.h)(0x5B69F946)
+I (uart.h)(0x67EB51F2)
+I (Common.h)(0x67EB51C8)
+I (Leds.h)(0x67EB51BB)
+I (switches.h)(0x67EAEFE6)
+I (Timer32.h)(0x67EAEFE6)
+I (CortexM.h)(0x67EAEFE6)
+I (ADC14.h)(0x67EB51E2)
+F (.\Lab5-Timer.c)(0x67EAFDD7)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -D_RTE_ -D__MSP432P401R__-o .\objects\lab5-timer.o --omf_browse .\objects\lab5-timer.crf --depend .\objects\lab5-timer.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5EC82CCC)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5EC82CCC)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp432p401r.h)(0x5B69F944)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5EC82CCC)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp_compatibility.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp432p401r_classic.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83BD92)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\system_msp432p401r.h)(0x5B69F946)
+I (uart.h)(0x67EB51F2)
+I (Common.h)(0x67EB51C8)
+I (switches.h)(0x67EAEFE6)
+I (Leds.h)(0x67EB51BB)
+I (Timer32.h)(0x67EAEFE6)
+I (CortexM.h)(0x67EAEFE6)
+F (.\Leds.c)(0x67EAEFE6)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -D_RTE_ -D__MSP432P401R__-o .\objects\leds.o --omf_browse .\objects\leds.crf --depend .\objects\leds.d)
+I (Leds.h)(0x67EB51BB)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp432p401r.h)(0x5B69F944)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5EC82CCC)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp_compatibility.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp432p401r_classic.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83BD92)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\system_msp432p401r.h)(0x5B69F946)
+I (Common.h)(0x67EB51C8)
+F (.\Leds.h)(0x67EB51BB)()
+F (.\switches.c)(0x67EAEFE6)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -D_RTE_ -D__MSP432P401R__-o .\objects\switches.o --omf_browse .\objects\switches.crf --depend .\objects\switches.d)
+I (switches.h)(0x67EAEFE6)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp432p401r.h)(0x5B69F944)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5EC82CCC)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp_compatibility.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp432p401r_classic.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83BD92)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\system_msp432p401r.h)(0x5B69F946)
+I (Common.h)(0x67EB51C8)
+F (.\switches.h)(0x67EAEFE6)()
+F (.\SysTickTimer.c)(0x67F2DF27)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -D_RTE_ -D__MSP432P401R__-o .\objects\systicktimer.o --omf_browse .\objects\systicktimer.crf --depend .\objects\systicktimer.d)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp432p401r.h)(0x5B69F944)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5EC82CCC)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp_compatibility.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp432p401r_classic.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83BD92)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\system_msp432p401r.h)(0x5B69F946)
+I (SysTickTimer.h)(0x67EAEFE6)
+I (Common.h)(0x67EB51C8)
+I (CortexM.h)(0x67EAEFE6)
+F (.\SysTickTimer.h)(0x67EAEFE6)()
+F (.\Timer32.c)(0x67F2E7B9)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -D_RTE_ -D__MSP432P401R__-o .\objects\timer32.o --omf_browse .\objects\timer32.crf --depend .\objects\timer32.d)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp432p401r.h)(0x5B69F944)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5EC82CCC)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp_compatibility.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp432p401r_classic.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83BD92)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\system_msp432p401r.h)(0x5B69F946)
+I (Timer32.h)(0x67EAEFE6)
+I (Common.h)(0x67EB51C8)
+I (CortexM.h)(0x67EAEFE6)
+F (.\Timer32.h)(0x67EAEFE6)()
+F (.\TimerA.c)(0x67EAEFE6)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -D_RTE_ -D__MSP432P401R__-o .\objects\timera.o --omf_browse .\objects\timera.crf --depend .\objects\timera.d)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp432p401r.h)(0x5B69F944)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5EC82CCC)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp_compatibility.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp432p401r_classic.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83BD92)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\system_msp432p401r.h)(0x5B69F946)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5EC82CCC)
+I (TimerA.h)(0x67EB51D1)
+I (Common.h)(0x67EB51C8)
+I (uart.h)(0x67EB51F2)
+F (.\TimerA.h)(0x67EB51D1)()
+F (.\uart.c)(0x67EB51FB)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -D_RTE_ -D__MSP432P401R__-o .\objects\uart.o --omf_browse .\objects\uart.crf --depend .\objects\uart.d)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp432p401r.h)(0x5B69F944)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5EC82CCC)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp_compatibility.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp432p401r_classic.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83BD92)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\system_msp432p401r.h)(0x5B69F946)
+I (uart.h)(0x67EB51F2)
+I (Common.h)(0x67EB51C8)
+F (.\uart.h)(0x67EB51F2)()
+F (.\CortexM.c)(0x67EAFA0C)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -D_RTE_ -D__MSP432P401R__-o .\objects\cortexm.o --omf_browse .\objects\cortexm.crf --depend .\objects\cortexm.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5EC82CCC)
+F (.\CortexM.h)(0x67EAEFE6)()
+F (.\motors.c)(0x67ED5FCB)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -D_RTE_ -D__MSP432P401R__-o .\objects\motors.o --omf_browse .\objects\motors.crf --depend .\objects\motors.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5EC82CCC)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5EC82CCC)
+I (ADC14.h)(0x67EB51E2)
+I (Common.h)(0x67EB51C8)
+I (ControlPins.h)(0x67EB51DA)
+I (CortexM.h)(0x67EAEFE6)
+I (leds.h)(0x67EB51BB)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp432p401r.h)(0x5B69F944)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5EC82CCC)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp_compatibility.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp432p401r_classic.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83BD92)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\system_msp432p401r.h)(0x5B69F946)
+I (switches.h)(0x67EAEFE6)
+I (SysTickTimer.h)(0x67EAEFE6)
+I (TimerA.h)(0x67EB51D1)
+I (uart.h)(0x67EB51F2)
+F (.\Demo1_Main.c)(0x67F2FB33)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -D_RTE_ -D__MSP432P401R__-o .\objects\demo1_main.o --omf_browse .\objects\demo1_main.crf --depend .\objects\demo1_main.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5EC82CCC)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5EC82CCC)
+I (motors.h)(0x67F2227F)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp432p401r.h)(0x5B69F944)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5EC82CCC)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp_compatibility.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp432p401r_classic.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83BD92)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\system_msp432p401r.h)(0x5B69F946)
+I (Common.h)(0x67EB51C8)
+I (switches.h)(0x67EAEFE6)
+I (ADC14.h)(0x67EB51E2)
+I (ControlPins.h)(0x67EB51DA)
+I (CortexM.h)(0x67EAEFE6)
+F (.\motors.h)(0x67F2227F)()
+F (.\Lab5-Camera.c)(0x67F221D9)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -D_RTE_ -D__MSP432P401R__-o .\objects\lab5-camera.o --omf_browse .\objects\lab5-camera.crf --depend .\objects\lab5-camera.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5EC82CCC)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5EC82CCC)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp432p401r.h)(0x5B69F944)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5EC82CCC)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp_compatibility.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp432p401r_classic.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83BD92)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\system_msp432p401r.h)(0x5B69F946)
+I (uart.h)(0x67EB51F2)
+I (Common.h)(0x67EB51C8)
+I (leds.h)(0x67EB51BB)
+I (switches.h)(0x67EAEFE6)
+I (Timer32.h)(0x67EAEFE6)
+I (CortexM.h)(0x67EAEFE6)
+I (ADC14.h)(0x67EB51E2)
+I (ControlPins.h)(0x67EB51DA)
+F (RTE\Device\MSP432P401R\startup_msp432p401r_uvision.s)(0x5A5CC326)(--cpu Cortex-M4.fp.sp --pd "__EVAL SETA 1" -g --apcs=interwork -I.\RTE\_Target_1-IC:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include--pd "__UVISION_VERSION SETA 531" --pd "_RTE_ SETA 1" --pd "_RTE_ SETA 1" --pd "__MSP432P401R__ SETA 1"--list .\listings\startup_msp432p401r_uvision.lst --xref -o .\objects\startup_msp432p401r_uvision.o --depend .\objects\startup_msp432p401r_uvision.d)
+F (RTE\Device\MSP432P401R\system_msp432p401r.c)(0x67F1AE2F)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -D_RTE_ -D__MSP432P401R__-o .\objects\system_msp432p401r.o --omf_browse .\objects\system_msp432p401r.crf --depend .\objects\system_msp432p401r.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5EC82CCC)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp432p401r.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp_compatibility.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\msp432p401r_classic.h)(0x5B69F944)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm4.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E83BD92)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armcc.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\mpu_armv7.h)(0x5E8F87F2)
+I (C:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include\system_msp432p401r.h)(0x5B69F946)

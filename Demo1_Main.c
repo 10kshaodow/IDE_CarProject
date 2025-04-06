@@ -11,8 +11,8 @@
 
 #include "Common.h"
 #define SMOOTHING 1
-#define SMOOTH_SIZE 5
-#define THRESHOLD 3000
+
+#define THRESHOLD 2000
 
 
 
@@ -37,41 +37,54 @@ uint8_t bintrace[128]; //just the thresholded result, either 1 (white) or 0 (dar
 extern BOOLEAN g_sendData; 
 
 
-void myDelay1(void)
+void myDelay1(float k)
 {
+	int counter = 1000000;
 	volatile int j = 0;
-	for (j = 0; j < 800000; j++)
+	counter = k * counter;
+	for (j = 0; j < (int)counter; j++)
 	{
 		;
 	}
 }
 
 int main(){
-	
+	DisableInterrupts();
 	init_motors();
+	Switch2_Init();
 	g_sendData = FALSE;
 	ControlPin_SI_Init();
 	ControlPin_CLK_Init();
 	ADC0_InitSWTriggerCh6();
 	EnableInterrupts();
-
+	
 
 	while(1){
 
 		int left_sum = 0; 
 		int	center_sum = 0;
 		int right_sum = 0;
-		int i = 0;		
-		if(Switch1_Pressed()){
+		int i = 0;
+		uint16_t min_val = 16383;
+		uint16_t max_val = 0;
+		uint16_t dynamic_threshold = 0;  // initialize it here
+
+		if(Switch1_Pressed() == TRUE){
 			if(g_sendData == TRUE){
 				g_sendData = FALSE;
 				
-			for ( i = 0; i < 128; i++) {
-					if (line[i] > THRESHOLD) {
-							bintrace[i] = 1;
-					} else {
-							bintrace[i] = 0;
-					}
+			
+			for (i = 0; i < 128; i++) {
+				if (line[i] < min_val) min_val = line[i];
+				if (line[i] > max_val) max_val = line[i];
+			}
+			dynamic_threshold = (max_val + min_val) / 2;
+			for (i = 0; i < 128; i++) {
+				if (line[i] > dynamic_threshold) {
+					bintrace[i] = 1;
+				} else {
+					bintrace[i] = 0;
+				}
 			}
 			
 			// 3. Sum regions
@@ -83,23 +96,33 @@ int main(){
 			// 4. Decision logic based on region sums
 			if (center_sum < 5) {
 					if (left_sum > right_sum) {
+							
 							servo_left();          // white is mostly on left
+							move_forward(0.15);
+							myDelay1(1.0); // normal
+							move_forward(0.22);
+							myDelay1(0.5);
+						
 					} else if (right_sum > left_sum) {
+							
 							servo_right();         // white is mostly on right
+							move_forward(0.15);
+							myDelay1(1.0);
+							move_forward(0.22);
+							myDelay1(0.5);
 					} else {
 							stop_motors();         // track lost
-							move_backward(0.3);
-							myDelay1();
+							break;
 					}
 			} else {
 					servo_center();            // track is centered
 			}
 
-move_forward(0.4); // always move forward unless stopped above
+move_forward(0.2); // always move forward unless stopped above
 			
-		}else if(Switch2_Pressed()){
+		}else if(Switch2_Pressed() == TRUE){
 				stop_motors();
-				continue;
+				break;
 		}
 }
 }
