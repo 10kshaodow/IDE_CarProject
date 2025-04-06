@@ -9,7 +9,7 @@ void init_motors(void);
 
 void move_forward(double speed);
 
-void move_backward(void);
+void move_backward(double speed);
 
 void stop_motors(void);
 

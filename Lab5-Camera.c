@@ -42,7 +42,7 @@
 extern uint16_t line[128];
 extern BOOLEAN g_sendData;
 
-static char str[100];
+//static char str[100];
 
 // ADC_In() gets the latest value from the ADC
 // ADC will be P4.7 A6
