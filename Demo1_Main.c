@@ -8,6 +8,7 @@
 #include "ADC14.h"
 #include "ControlPins.h"
 #include "CortexM.h"
+#include "uart.h"
 
 #include "Common.h"
 #define SMOOTHING 1
@@ -51,6 +52,7 @@ void myDelay1(float k)
 int main(){
 	DisableInterrupts();
 	init_motors();
+	//uart2_init();
 	Switch2_Init();
 	g_sendData = FALSE;
 	ControlPin_SI_Init();
@@ -68,6 +70,7 @@ int main(){
 		uint16_t min_val = 16383;
 		uint16_t max_val = 0;
 		uint16_t dynamic_threshold = 0;  // initialize it here
+		char debugStr[64];
 
 		if(Switch1_Pressed() == TRUE){
 			if(g_sendData == TRUE){
@@ -94,30 +97,37 @@ int main(){
 			for ( i = 85; i < 128; i++) {right_sum += bintrace[i];}
 
 			// 4. Decision logic based on region sums
-			if (center_sum < 3) {
-					if (left_sum > right_sum) {
-							
+			if (center_sum < 16) {
+					if (left_sum > right_sum) {	
+						
 							servo_left();          // white is mostly on left
-							move_forward(0.15);
-							myDelay1(0.6); // normal
+							move_forward(0.20);
+							myDelay1(0.5); // normal
 							move_forward(0.22);
-							myDelay1(0.3); // speed f
+							myDelay1(0.25); // speed f
 						
 
 					} else if (right_sum > left_sum) {
 							
 							servo_right();         // white is mostly on right
-							move_forward(0.15);
-							myDelay1(0.6);
+							move_forward(0.2);
+							myDelay1(0.5);
 							move_forward(0.22);
-							myDelay1(0.3); // speed f
+							myDelay1(0.25); // speed f
 					} else {
 							stop_motors();         // track lost
+//							sprintf(debugStr, "L:%d C:%d R:%d", left_sum, center_sum, right_sum);
+//							uart2_put(debugStr);  // Send over UART2 (Bluetooth)
+//							uart2_put("\r\n");    // New line for clarity
 							break;
 					}
 			} else {
 					servo_center();            // track is centered
 			}
+//				sprintf(debugStr, "L:%d C:%d R:%d", left_sum, center_sum, right_sum);
+//				uart2_put(debugStr);  // Send over UART2 (Bluetooth)
+//				uart2_put("\r\n");    // New line for clarity			
+			
 
 move_forward(0.2); // always move forward unless stopped above
 			

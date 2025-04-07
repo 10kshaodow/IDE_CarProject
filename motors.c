@@ -83,10 +83,15 @@ void stop_motors(void){
 
 void servo_right(void){
     TIMER_A2_PWM_DutyCycle(1-0.05, 1);
+//		uart2_put("R");
+//		uart2_put("\r\n");
 }
 
 void servo_left(void){
     TIMER_A2_PWM_DutyCycle(1-0.1, 1);
+//		uart2_put("L");
+//		uart2_put("\r\n");
+	
 }
 
 void servo_center(void){

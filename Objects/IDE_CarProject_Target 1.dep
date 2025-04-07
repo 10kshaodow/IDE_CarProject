@@ -175,7 +175,7 @@ F (.\uart.h)(0x67EB51F2)()
 F (.\CortexM.c)(0x67EAFA0C)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -D_RTE_ -D__MSP432P401R__-o .\objects\cortexm.o --omf_browse .\objects\cortexm.crf --depend .\objects\cortexm.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5EC82CCC)
 F (.\CortexM.h)(0x67EAEFE6)()
-F (.\motors.c)(0x67ED5FCB)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -D_RTE_ -D__MSP432P401R__-o .\objects\motors.o --omf_browse .\objects\motors.crf --depend .\objects\motors.d)
+F (.\motors.c)(0x67F427A8)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -D_RTE_ -D__MSP432P401R__-o .\objects\motors.o --omf_browse .\objects\motors.crf --depend .\objects\motors.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5EC82CCC)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5EC82CCC)
 I (ADC14.h)(0x67EB51E2)
@@ -198,7 +198,7 @@ I (switches.h)(0x67EAEFE6)
 I (SysTickTimer.h)(0x67EAEFE6)
 I (TimerA.h)(0x67EB51D1)
 I (uart.h)(0x67EB51F2)
-F (.\Demo1_Main.c)(0x67F40038)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -D_RTE_ -D__MSP432P401R__-o .\objects\demo1_main.o --omf_browse .\objects\demo1_main.crf --depend .\objects\demo1_main.d)
+F (.\Demo1_Main.c)(0x67F42983)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -D_RTE_ -D__MSP432P401R__-o .\objects\demo1_main.o --omf_browse .\objects\demo1_main.crf --depend .\objects\demo1_main.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5EC82CCC)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5EC82CCC)
 I (motors.h)(0x67F2227F)
@@ -218,6 +218,7 @@ I (switches.h)(0x67EAEFE6)
 I (ADC14.h)(0x67EB51E2)
 I (ControlPins.h)(0x67EB51DA)
 I (CortexM.h)(0x67EAEFE6)
+I (uart.h)(0x67EB51F2)
 F (.\motors.h)(0x67F2227F)()
 F (.\Lab5-Camera.c)(0x67F221D9)(-c --cpu Cortex-M4.fp.sp -D__EVAL -g -O0 --apcs=interwork --split_sections-I.\RTE\_Target_1-IC:\Users\Andre\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include-IC:\Users\Andre\AppData\Local\Arm\Packs\TexasInstruments\MSP432P4xx_DFP\3.2.6\Device\Include-D__UVISION_VERSION="531" -D_RTE_ -D_RTE_ -D__MSP432P401R__-o .\objects\lab5-camera.o --omf_browse .\objects\lab5-camera.crf --depend .\objects\lab5-camera.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5EC82CCC)

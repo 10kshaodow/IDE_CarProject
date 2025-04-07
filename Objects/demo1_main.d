@@ -18,3 +18,4 @@
 .\objects\demo1_main.o: ADC14.h
 .\objects\demo1_main.o: ControlPins.h
 .\objects\demo1_main.o: CortexM.h
+.\objects\demo1_main.o: uart.h
