@@ -94,22 +94,23 @@ int main(){
 			for ( i = 85; i < 128; i++) {right_sum += bintrace[i];}
 
 			// 4. Decision logic based on region sums
-			if (center_sum < 5) {
+			if (center_sum < 3) {
 					if (left_sum > right_sum) {
 							
 							servo_left();          // white is mostly on left
 							move_forward(0.15);
-							myDelay1(1.0); // normal
+							myDelay1(0.6); // normal
 							move_forward(0.22);
-							myDelay1(0.5);
+							myDelay1(0.3); // speed f
 						
+
 					} else if (right_sum > left_sum) {
 							
 							servo_right();         // white is mostly on right
 							move_forward(0.15);
-							myDelay1(1.0);
+							myDelay1(0.6);
 							move_forward(0.22);
-							myDelay1(0.5);
+							myDelay1(0.3); // speed f
 					} else {
 							stop_motors();         // track lost
 							break;
