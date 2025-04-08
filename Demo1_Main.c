@@ -11,26 +11,8 @@
 #include "uart.h"
 
 #include "Common.h"
-#define SMOOTHING 1
-
-#define THRESHOLD 2000
 
 
-
-///////////////////////////////////////////////////////
-//
-// NOTE: For the camera, you may want to change the default
-//       clock to 48MHz
-//
-// To do that: Edit system_msp432p401r.c
-//             Change:   #define  __SYSTEM_CLOCK    3000000
-//             To:       #define  __SYSTEM_CLOCK    48000000 
-// ADC will be P4.7 A6
-//
-// SI Pin will be P5.5 A0
-//
-// CLK Pin will be P5.4 A1//
-//
 
 // line stores the current array of camera data
 extern uint16_t line[128]; // raw ADC values (brightness levels)
@@ -52,7 +34,7 @@ void myDelay1(float k)
 int main(){
 	DisableInterrupts();
 	init_motors();
-	//uart2_init();
+	uart2_init();
 	Switch2_Init();
 	g_sendData = FALSE;
 	ControlPin_SI_Init();
@@ -67,10 +49,11 @@ int main(){
 		int	center_sum = 0;
 		int right_sum = 0;
 		int i = 0;
+		//int test_num = 0;
 		uint16_t min_val = 16383;
 		uint16_t max_val = 0;
 		uint16_t dynamic_threshold = 0;  // initialize it here
-		char debugStr[64];
+		//char debugStr[64];
 
 		if(Switch1_Pressed() == TRUE){
 			if(g_sendData == TRUE){
@@ -89,7 +72,15 @@ int main(){
 					bintrace[i] = 0;
 				}
 			}
-			
+//		test_num = 	max_val - min_val;
+//		sprintf(debugStr, "max_val:%d min_val:%d test_num:%d", max_val, min_val, test_num);
+//		uart2_put(debugStr);
+//		uart2_put("\r\n");
+		
+		if ((max_val - min_val) < 2500) {  // average for IoT was 2400
+			stop_motors();
+			break;
+		}
 			// 3. Sum regions
 			
 			for ( i = 0; i < 42; i++) {left_sum += bintrace[i];}
@@ -97,28 +88,25 @@ int main(){
 			for ( i = 85; i < 128; i++) {right_sum += bintrace[i];}
 
 			// 4. Decision logic based on region sums
-			if (center_sum < 16) {
-					if (left_sum > right_sum) {	
+			if ((center_sum < 10)|| (right_sum < 10 ) ||(left_sum < 10)) {
+					if ((left_sum > right_sum) ) {	
 						
 							servo_left();          // white is mostly on left
-							move_forward(0.20);
-							myDelay1(0.5); // normal
-							move_forward(0.22);
+							move_forward(0.2);
+							myDelay1(0.7); // normal
+							move_forward(0.23);
 							myDelay1(0.25); // speed f
 						
 
-					} else if (right_sum > left_sum) {
+					} else if ((right_sum > left_sum)) {
 							
 							servo_right();         // white is mostly on right
 							move_forward(0.2);
-							myDelay1(0.5);
-							move_forward(0.22);
+							myDelay1(0.7);
+							move_forward(0.23);
 							myDelay1(0.25); // speed f
 					} else {
 							stop_motors();         // track lost
-//							sprintf(debugStr, "L:%d C:%d R:%d", left_sum, center_sum, right_sum);
-//							uart2_put(debugStr);  // Send over UART2 (Bluetooth)
-//							uart2_put("\r\n");    // New line for clarity
 							break;
 					}
 			} else {
@@ -127,7 +115,7 @@ int main(){
 //				sprintf(debugStr, "L:%d C:%d R:%d", left_sum, center_sum, right_sum);
 //				uart2_put(debugStr);  // Send over UART2 (Bluetooth)
 //				uart2_put("\r\n");    // New line for clarity			
-			
+		}
 
 move_forward(0.2); // always move forward unless stopped above
 			
@@ -136,6 +124,6 @@ move_forward(0.2); // always move forward unless stopped above
 				break;
 		}
 }
-}
+
 return 0;
 }
