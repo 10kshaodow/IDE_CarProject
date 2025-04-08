@@ -1,0 +1,25 @@
+# Ignore Keil build artifacts
+Objects/
+Listings/
+
+# Ignore individual build outputs
+*.axf
+*.o
+*.crf
+*.map
+*.htm
+*.dep
+*.build_log.htm
+
+# Ignore user-specific IDE settings
+*.uvguix.*
+*.uvoptx
+
+# Optional: Ignore backup or temp files
+*~
+*.bak
+*.tmp
+
+# Windows specific (OneDrive or system files)
+Thumbs.db
+desktop.ini
