@@ -20,7 +20,7 @@
 extern uint16_t line[128]; // raw ADC values (brightness levels)
 uint8_t bintrace[128]; //just the thresholded result, either 1 (white) or 0 (dark).
 extern BOOLEAN g_sendData; 
-
+char debugStr[128];
 
 void myDelay1(float k)
 {
@@ -34,10 +34,10 @@ void myDelay1(float k)
 }
 float compute_line_position() {
     float sum = 0, weighted_sum = 0;
-		int i = 0;
-    for ( i = 0; i < 128; i++) {
-        if (bintrace[i]) {
-            weighted_sum += i;
+		int k = 0;
+    for ( k = 0; k < 128; k++) {
+        if (bintrace[k]) {
+            weighted_sum += k;
             sum += 1;
         }
     }
@@ -51,49 +51,59 @@ void adjust_steering(float control) {
     float offset;
     float duty;
 
-    // Clamp control to [-100, 100]
-    if (control > 100) control = 100;
-    if (control < -100) control = -100;
-
-    offset = (control / 100.0f) * max_offset;  // convert control to offset
+    offset = (control / 1.0f) * max_offset;  // convert control to offset
     duty = base_duty + offset;                 // adjust from center
 
     TIMER_A2_PWM_DutyCycle(1.0f - duty, 1);    // send to servo (inverted)
 }
 
 int main(){
+	
+	uint16_t min_val = 0;
+  uint16_t max_val = 0;
+	uint16_t dynamic_threshold = 0;  // initialize it here
+	
+	float Vdes = 63.5;
+	
+	float kp = 0.45;
+	float ki = 0.0;
+	float kd = 0.0;
+	
+	float controlOld = 0;
+	float errOld1 = 0; 
+	float errOld2 = 0;
+	
+	float Vact = 0;
+  float err = 0;
+  float control = 0;
+
 	DisableInterrupts();
 	init_motors();
 	uart2_init();
 	Switch2_Init();
+	Switch1_Init();
 	g_sendData = FALSE;
 	ControlPin_SI_Init();
 	ControlPin_CLK_Init();
 	ADC0_InitSWTriggerCh6();
 	EnableInterrupts();
+while (!Switch1_Pressed())	{}
 	
-
 	while(1){
+		
 		int i = 0;
-		//int test_num = 0;
-		uint16_t min_val = 16383;
-		uint16_t max_val = 0;
-		uint16_t dynamic_threshold = 0;  // initialize it here
-		
-		 float Vdes = 64.0;
-     float Vact = compute_line_position();
-     float err = Vdes - Vact;
-		//char debugStr[64];
-		
-		// PID
-		float kp = 0.45, ki = 0.05, kd = 0.1;
-    float controlOld = 0, errOld1 = 0, errOld2 = 0;
-		float control = controlOld +  kp * (err - errOld1) + ki * (err + errOld1) / 2 + kd * (err - 2 * errOld1 + errOld2);
 
-
-		if(Switch1_Pressed() == TRUE){
+//		sprintf(debugStr, "Vact:%f err:%f control:%f", Vact, err, control);
+//		uart2_put(debugStr);
+//		uart2_put("\r\n");
+//		debugStr[0] = '\0';
+//		
+		
 			if(g_sendData == TRUE){
 				g_sendData = FALSE;
+				
+				 min_val = 16383;
+				 max_val = 0;
 				
 			
 			for (i = 0; i < 128; i++) {
@@ -108,6 +118,9 @@ int main(){
 					bintrace[i] = 0;
 				}
 			}
+			
+			
+			
 //		test_num = 	max_val - min_val;
 //		sprintf(debugStr, "max_val:%d min_val:%d test_num:%d", max_val, min_val, test_num);
 //		uart2_put(debugStr);
@@ -118,23 +131,23 @@ int main(){
 			break;
 		}
 		
-   if (control > 100){ control = 100;}
-   if (control < -100){ control = -100;}
-
+		 Vact = compute_line_position();
+     err = Vdes - Vact;
+		
+		control = controlOld +  kp * (err - errOld1) + ki * ((err + errOld1) / (float)2.0) + kd * (err - (float)2.0 * errOld1 + errOld2);
+		
+   if (control > 1){ control = 1;}
+   if (control < -1){ control = -1;}
+		 
      adjust_steering(control);
 
      controlOld = control;
      errOld2 = errOld1;
      errOld1 = err;
 			
-	 move_forward(0.2); // always move forward unless stopped above
-
-//				sprintf(debugStr, "L:%d C:%d R:%d", left_sum, center_sum, right_sum);
-//				uart2_put(debugStr);  // Send over UART2 (Bluetooth)
-//				uart2_put("\r\n");    // New line for clarity			
+		 move_forward(0.2); // always move forward unless stopped above	
 	}
-}
-		if(Switch2_Pressed() == TRUE){
+  if(Switch2_Pressed() == TRUE){
 				stop_motors();
 				break;
 		}
