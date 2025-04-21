@@ -63,11 +63,11 @@ int main(){
   uint16_t max_val = 0;
 	uint16_t dynamic_threshold = 0;  // initialize it here
 	
-	float Vdes = 63.5;
+	float Vdes = 64.0;
 	
-	float kp = 0.45;
-	float ki = 0.0;
-	float kd = 0.0;
+	float kp = 0.8; // 0.8 increases frequency 
+	float ki = 0.01; // error correction 0.02 Takes too long to make a decision the more you increase
+	float kd = 0.15; // 0.25 increase rate of change in turning 
 	
 	float controlOld = 0;
 	float errOld1 = 0; 
@@ -145,7 +145,7 @@ while (!Switch1_Pressed())	{}
      errOld2 = errOld1;
      errOld1 = err;
 			
-		 move_forward(0.2); // always move forward unless stopped above	
+		 move_forward(0.35); // always move forward unless stopped above	
 	}
   if(Switch2_Pressed() == TRUE){
 				stop_motors();
