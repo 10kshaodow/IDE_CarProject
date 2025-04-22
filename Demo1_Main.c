@@ -62,7 +62,7 @@ float compute_line_position() {
             sum += 1;
         }
     }
-    if (sum == 0) return 64.0; // fallback to center if line is lost
+    if (sum == 0) return 62.0; // fallback to center if line is lost
     return weighted_sum / sum;
 }
 
@@ -83,11 +83,11 @@ int main() {
     uint16_t max_val = 0;
     uint16_t dynamic_threshold = 0;
 
-    float Vdes = 64.0;
+    float Vdes = 62;	//originally 64
 
-    float kp = 0.8;
+    float kp = 0.6;
     float ki = 0.02;
-    float kd = 0.17;
+    float kd = 0.3;
 
     float controlOld = 0;
     float errOld1 = 0;
@@ -97,11 +97,14 @@ int main() {
     float err = 0;
     float control = 0;
 
-    float base_speed = 0.55;
-    float min_speed = 0.3;
+    float base_speed = 0.35;
+    float min_speed = 0.2;
     float speed_range = base_speed - min_speed;
     float dynamic_speed = 0;
 		float control_intensity = 0;
+		
+		static int print_counter = 0;
+
 
     uint8_t smoothed_trace[128]; // === New smoothed array ===
 
@@ -120,7 +123,7 @@ int main() {
 
     while (1) {
         int i = 0;
-
+				move_forward(0.35);
         if (g_sendData == TRUE) {
             g_sendData = FALSE;
 
@@ -139,16 +142,25 @@ int main() {
             }
 
             // === Apply smoothing here ===
-            smooth_bintrace(bintrace, smoothed_trace, 128, 5);
+            smooth_bintrace(bintrace, smoothed_trace, 128, 3);
             memcpy(bintrace, smoothed_trace, sizeof(bintrace)); // Copy smoothed values back
 
-            if ((max_val - min_val) < 2500) {
+            if ((max_val - min_val) < 2800) {
                 stop_motors(); // Off track
                 break;
             }
 
             Vact = compute_line_position();
             err = Vdes - Vact;
+						
+//						print_counter++;
+//						if (print_counter >= 20) {
+//								snprintf(debugStr, sizeof(debugStr), "Vact: %.2f", Vact);
+//								uart2_put(debugStr);
+//								uart2_put("\r\n");
+//								debugStr[0] = '\0';
+//								print_counter = 0;
+//						}
 
             control = controlOld + kp * (err - errOld1) +
                       ki * ((err + errOld1) / 2.0f) +
@@ -157,7 +169,12 @@ int main() {
             if (control > 1) control = 1;
             if (control < -1) control = -1;
 
-            adjust_steering(control);
+            if (Vact > 60 && Vact < 64) {
+							servo_center();
+						}
+						else {
+							adjust_steering(control);
+						}
 
             controlOld = control;
             errOld2 = errOld1;
@@ -169,7 +186,7 @@ int main() {
             if (dynamic_speed < min_speed) dynamic_speed = min_speed;
             if (dynamic_speed > base_speed) dynamic_speed = base_speed;
 
-            move_forward(dynamic_speed); // Fixed forward speed (you can switch to dynamic_speed if needed)
+            move_forward(dynamic_speed);
         }
 
         if (Switch2_Pressed() == TRUE) {
