@@ -85,9 +85,9 @@ int main() {
 
     float Vdes = 62;	//originally 64
 
-    float kp = 0.6;
-    float ki = 0.02;
-    float kd = 0.3;
+    float kp = 0.6; // 0.6
+    float ki = 0.02; //0.02
+    float kd = 0.15; // 0.3
 
     float controlOld = 0;
     float errOld1 = 0;
@@ -97,8 +97,8 @@ int main() {
     float err = 0;
     float control = 0;
 
-    float base_speed = 0.35;
-    float min_speed = 0.2;
+    float base_speed = 0.28;
+    float min_speed = 0.18;
     float speed_range = base_speed - min_speed;
     float dynamic_speed = 0;
 		float control_intensity = 0;
@@ -123,7 +123,7 @@ int main() {
 
     while (1) {
         int i = 0;
-				move_forward(0.35);
+				move_forward(base_speed);
         if (g_sendData == TRUE) {
             g_sendData = FALSE;
 
