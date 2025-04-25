@@ -35,7 +35,7 @@ void run_fastcar() {
 
     float Vdes = 62; //originally 64
 
-    float kp = 0.8;		//0.6
+    float kp = 0.6;		//0.6
     float ki = 0.02;	//0.02
     float kd = 0.6;	//0.15 **0.6**
 
