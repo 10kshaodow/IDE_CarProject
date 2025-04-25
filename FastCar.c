@@ -47,8 +47,8 @@ void run_fastcar() {
     float err = 0;
     float control = 0;
 
-    float base_speed = 0.68;
-    float min_speed = 0.3;
+	float base_speed = 0.5;		// was 0.68, cannot be higher than 0.5 :(
+    float min_speed = 0.32;	// This speed is probably the one
     float speed_range = base_speed - min_speed;
     float dynamic_speed = 0;
     float control_intensity = 0;
