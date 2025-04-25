@@ -35,9 +35,9 @@ void run_fastcar() {
 
     float Vdes = 62; //originally 64
 
-    float kp = 0.6;		//0.6
+    float kp = 0.8;		//0.6
     float ki = 0.02;	//0.02
-    float kd = 0.65;	//0.15 **0.6**
+    float kd = 0.6;	//0.15 **0.6**
 
     float controlOld = 0;
     float errOld1 = 0;
@@ -95,7 +95,7 @@ void run_fastcar() {
 					
 					speedfactor = 1 - (dynamic_speed / base_speed);
 
-					if (Vact > 59 && Vact < 64) {
+					if (Vact > 60.5f && Vact < 64.5f) { // centering position on line
 							servo_center();
 					} else {
 							adjust_dual_steering(control, speedfactor);
