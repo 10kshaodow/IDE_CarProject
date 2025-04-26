@@ -35,7 +35,7 @@ void run_fastcar() {
 
     float Vdes = 62; //originally 64
 
-    float kp = 0.6;		//0.6
+    float kp = 0.58;		//0.6
     float ki = 0.02;	//0.02
     float kd = 0.6;	//0.15 **0.6**
 
@@ -48,7 +48,7 @@ void run_fastcar() {
     float control = 0;
 
 	float base_speed = 0.5;		// was 0.68, cannot be higher than 0.5 :(
-    float min_speed = 0.32;	// This speed is probably the one
+    float min_speed = 0.34;	// This speed is probably the one, 0.35 orig. 0.32 works
     float speed_range = base_speed - min_speed;
     float dynamic_speed = 0;
     float control_intensity = 0;
@@ -78,10 +78,10 @@ void run_fastcar() {
 					smooth_bintrace(bintrace, smoothed_trace, 128, 7);
 					memcpy(bintrace, smoothed_trace, sizeof(bintrace));
 
-					if ((max_val - min_val) < 4500) {
-							stop_motors(); // Off track
-							break;
-					}
+					//if ((max_val - min_val) < 4500) {
+					//		stop_motors(); // Off track
+					//		break;
+					//}
 
 					Vact = compute_line_position();
 					err = Vdes - Vact;
@@ -107,7 +107,7 @@ void run_fastcar() {
 
 					control_intensity = fabsf(control);
 					//dynamic_speed = base_speed * expf(-8.0f * control_intensity); // adjust -3.0f to control severity
-					dynamic_speed = base_speed - powf(control_intensity, 3.5f) * speed_range;
+					dynamic_speed = base_speed - powf(control_intensity, 3.5f) * speed_range; // THIS WORKS VERY WELL
 					//dynamic_speed = base_speed - (control_intensity * control_intensity * speed_range);
 					//dynamic_speed = base_speed - (control_intensity * speed_range);
 					if (dynamic_speed < min_speed) dynamic_speed = min_speed;
